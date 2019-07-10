@@ -12,6 +12,10 @@ const Navbar=()=>{
 						<Link className="ui item" to="/">
 							All Streams	
 						</Link>
+						<div className="ui item">
+							<GoogleAuth />
+						</div>
+						
 				</div>
 			</div>
 
