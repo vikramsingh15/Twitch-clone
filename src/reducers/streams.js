@@ -5,13 +5,13 @@ const Streams=(state={},action)=>{
 			  return {...state,[action.payload.id]:action.payload}	
 
 		case 'SHOW_STREAM':
-			  return 		
+			  return {...state,[action.payload.id]:action.payload}		
 
 		case 'EDIT_STREAM':
 			  return {...state,[action.payload.id]:action.payload}
 
 		case 'DELETE_STREAM':
-			  return _.omit(...state,action.payload);
+			  return _.omit(state,action.payload);
 
 		case 'INDEX_STREAM':
 		

@@ -5,7 +5,6 @@ import history from '../history';
 export const signIn=(userId)=>({type:"SIGN_IN",payload:userId});
 
 export const signOut=()=>({type:"SIGN_OUT",payload:null});
-
 export const createStream=formValue=>async (dispatch,getState)=>{
 
 	const {userId}=getState().auth;
@@ -25,11 +24,13 @@ export const showStream =id=>async dispatch=>{
 }
 
 export const editStream = (id,formValue) =>async dispatch=>{
-	const response = await Streams.put(`/streams/${id}`,formValue);
+	const response = await Streams.patch(`/streams/${id}`,formValue);
 	dispatch({type:"EDIT_STREAM",payload:response.data});
+	history.push('/');
 }
 
 export const deleteStream=id=>async dispatch=>{
 	await Streams.delete(`/streams/${id}`);
 	dispatch({type:"DELETE_STREAM",payload:id});
+	history.push('/');
 }

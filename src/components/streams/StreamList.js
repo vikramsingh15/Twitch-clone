@@ -14,7 +14,7 @@ class StreamIndex extends React.Component{
 						<Link className="ui button primary" to={`/streams/edit/${id}`}>
 							Edit
 						</Link>
-						<Link className="ui button negative">
+						<Link className="ui button negative" to={`/streams/delete/${id}`}>
 							Delete
 						</Link>
 			</div>
@@ -28,7 +28,9 @@ class StreamIndex extends React.Component{
 							<i className="large middle aligned icon camera" />
 							
 							<div className="content">
-								{stream.title}
+							<Link to={`/streams/${stream.id}`}>{stream.title}</Link>
+
+								
 							<div className="description">{stream.description}</div>
 							</div>
 						</div>
